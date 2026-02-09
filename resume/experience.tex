@@ -17,38 +17,25 @@
     {May 2024 -- Present} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Architected a semantic segmentation pipeline for brain MRI analysis (700k+ volumes) using U-Net variants with Attention Mechanisms, achieving state-of-the-art parcellation accuracy.}
-        \item {Optimized legacy research code for training and inference, significantly reducing computation time and preparing models for production deployment on the VolBrain neuroimaging platform.}
-        \item {Validated segmentation models against expert neuroanatomical annotations, ensuring clinical-grade reliability across heterogeneous MRI acquisitions.}
-        \item {Modernized lab engineering practices: implemented private Gitlab, modular code architecture, and reproducible experiment tracking to a previously ad-hoc research workflow.}
+        \item {Designed Attention-augmented U-Net architectures for volumetric brain MRI parcellation across 700k+ heterogeneous acquisitions, achieving state-of-the-art neuroanatomical precision on the VolBrain platform.}
+        \item {Analyzed and restructured the full inference data flow---from raw NIfTI ingestion through multi-scale feature extraction to voxel-level label assignment---reducing computation time and enabling reproducible deployment.}
+        \item {Developed quantitative validation protocols against expert neuroanatomical annotations, ensuring clinical-grade segmentation reliability across acquisition sites, field strengths, and patient demographics.}
+        \item {Established principled experiment tracking and modular architecture for a research group previously operating ad-hoc, enabling systematic ablation studies and reproducible baselines.}
       \end{cvitems}
     }
 
 %---------------------------------------------------------
   \cventry
-    {Co-Founder \& CTO} % Job title
+    {Co-Founder \& Chief Scientist} % Job title
     {Mycrospace --- Biotech Startup} % Organization
     {Valencia, Spain} % Location
     {Jan. 2024 -- Present} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Designed and deployed a proprietary Computer Vision system for automated microbial colony counting, achieving 95\% median MAPE against expert microbiologist ground truth.}
-        \item {Engineered custom model architectures---YOLO-based detectors and Density Map Regressors---to handle high-density overlapping objects ($>$300 colonies per plate).}
-        \item {Curated a specialized dataset of 3,500 annotated images across 12 microbial species, validating ground truth labels in collaboration with domain microbiologists.}
-        \item {Built the full ML infrastructure: data ingestion pipelines, PyTorch training framework, and scalable inference API deployed on Google Cloud Platform with Docker.}
-        \item {Delivered full-stack product development (Next.js, Cloud) as a secondary enabler, enabling rapid iteration from research prototype to production SaaS.}
-      \end{cvitems}
-    }
-
-%---------------------------------------------------------
-  \cventry
-    {Product Developer --- Internship} % Job title
-    {Vesta-Z} % Organization
-    {Valencia, Spain} % Location
-    {2023} % Date(s)
-    {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Developed full-stack cloud-based product features, gaining production experience in scalable web architectures and deployment workflows.}
+        \item {Formulated the high-density colony counting problem ($>$300 overlapping colonies per plate) as a density estimation task and designed proprietary Density Map Regressors from first mathematical principles.}
+        \item {Architected hybrid detection-regression pipelines combining spatial priors with learned density kernels, achieving 95\% median accuracy against expert microbiologist annotations.}
+        \item {Curated a domain-specific dataset of 3,500 annotated images across 12 microbial species; co-designed annotation protocols with microbiologists to ensure ground-truth integrity.}
+        \item {Built end-to-end ML infrastructure---PyTorch training framework, data pipelines, and containerized inference (Docker/GCP)---taking each model from mathematical formulation to deployed system.}
       \end{cvitems}
     }
 
@@ -60,7 +47,7 @@
     {2022 -- 2023} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Developed ML models for ocular movement analysis applied to neuromarketing, engineering end-to-end pipelines from raw gaze data to predictive inference.}
+        \item {Built ML models for temporal gaze-pattern analysis: extracted features from raw ocular movement sequences, designed predictive pipelines, and evaluated against behavioural ground truth.}
       \end{cvitems}
     }
 
@@ -72,7 +59,7 @@
     {2022} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Gained early exposure to large language models (GPT-2/3), Diffusion Models, and IBM Watson, contributing to applied NLP and generative AI projects.}
+        \item {Early exposure to large language models (GPT-2/3) and Diffusion Models; contributed to applied NLP and generative modelling projects.}
       \end{cvitems}
     }
 
