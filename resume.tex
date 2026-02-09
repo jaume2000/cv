@@ -1,0 +1,92 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Customized for: Jaume Ivars Grimalt
+% Target Role: Research Engineer / ML Engineer
+%
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+\documentclass[11pt, a4paper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+\definecolor{awesome}{HTML}{2B547E}
+
+% Colors for text
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+% Fix skills table overflow
+\renewenvironment{cvskills}{%
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-2.0mm}
+  \begin{center}
+    \setlength\tabcolsep{1ex}
+    \setlength{\extrarowheight}{0pt}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.8}}}
+}{%
+    \end{tabular*}
+  \end{center}
+}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+\name{Jaume}{Ivars Grimalt}
+\position{Research Engineer{\enskip\cdotp\enskip}Machine Learning Engineer}
+\address{Valencia, Spain --- Open to: London, Zurich, US}
+
+\mobile{(+34) 6900183644}
+\email{jaumeig95@gmail.com}
+% \homepage{www.yourwebsite.com}
+\github{jaume2000}
+\linkedin{jaume-ivars-grimalt}
+% \googlescholar{googlescholar-id}{Jaume Ivars Grimalt}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal information
+\makecvheader[C]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+\makecvfooter
+  {\today}
+  {Jaume Ivars Grimalt~~~·~~~CV}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%-------------------------------------------------------------------------------
+\input{resume/summary.tex}
+\input{resume/experience.tex}
+\input{resume/education.tex}
+\input{resume/skills.tex}
+\input{resume/honors.tex}
+
+
+%-------------------------------------------------------------------------------
+\end{document}
