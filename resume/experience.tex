@@ -1,67 +1,68 @@
 %-------------------------------------------------------------------------------
-%	SECTION TITLE
+% SECTION TITLE
 %-------------------------------------------------------------------------------
 \cvsection{Experience}
-
-
 %-------------------------------------------------------------------------------
-%	CONTENT
+% CONTENT
 %-------------------------------------------------------------------------------
 \begin{cventries}
-
 %---------------------------------------------------------
-  \cventry
-    {Research Engineer} % Job title
-    {MIALAB --- Medical Imaging Analysis Laboratory, UPV} % Organization
-    {Valencia, Spain} % Location
-    {May 2024 -- Present} % Date(s)
+\cvkeep
+\cventry
+    {Co-Founder \& CTO}
+    {Mycrospace}
+    {Valencia, Spain}
+    {Jan 2024 -- Present}
     {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Designed Attention-augmented U-Net architectures for volumetric brain MRI parcellation across 700k+ heterogeneous acquisitions, achieving state-of-the-art neuroanatomical precision on the VolBrain platform.}
-        \item {Analyzed and restructured the full inference data flow---from raw NIfTI ingestion through multi-scale feature extraction to voxel-level label assignment---reducing computation time and enabling reproducible deployment.}
-        \item {Developed quantitative validation protocols against expert neuroanatomical annotations, ensuring clinical-grade segmentation reliability across acquisition sites, field strengths, and patient demographics.}
-        \item {Established principled experiment tracking and modular architecture for a research group previously operating ad-hoc, enabling systematic ablation studies and reproducible baselines.}
-      \end{cvitems}
+      Computer-vision product for microbiology, in production. Concurrently part-time with MIALAB (May 2025 -- Jan 2026).
+      \vspace{4.0mm}
+\begin{cvitems}
+\item {Formulated high-density colony counting ($>$300 overlapping colonies per plate) as density estimation; designed proprietary \mbox{Density Map Regressors} with Bayesian priors. Object detection at \textbf{67 mAP50-95} and \textbf{95\% median accuracy} against expert microbiologist annotation.}
+\item {Built the full system: PyTorch training framework, data pipelines, containerized inference (Docker/GCP), REST API (NestJS/Prisma), webapp (Next.js/TypeScript). Own dataset of \textbf{3,500} annotated images across \textbf{12} microbial species; annotation protocols co-designed with microbiologists. \textbf{3,012 GPU-hours} of training.}
+\item {\textbf{5 laboratories} using the product in production today. Supervise one full-stack developer (frontend and backend) since \todo{since when}.}
+\end{cvitems}
     }
-
 %---------------------------------------------------------
-  \cventry
-    {Co-Founder \& Chief Scientist} % Job title
-    {Mycrospace --- Biotech Startup} % Organization
-    {Valencia, Spain} % Location
-    {Jan. 2024 -- Present} % Date(s)
+\cvkeep
+\cventry
+    {ML Engineer, part-time}
+    {MIALAB --- Medical Imaging Analysis Laboratory, UPV}
+    {Valencia, Spain}
+    {May 2025 -- Jan 2026}
     {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Formulated the high-density colony counting problem ($>$300 overlapping colonies per plate) as a density estimation task and designed proprietary Density Map Regressors from first mathematical principles.}
-        \item {Architected hybrid detection-regression pipelines combining spatial priors with learned density kernels, achieving 95\% median accuracy against expert microbiologist annotations.}
-        \item {Curated a domain-specific dataset of 3,500 annotated images across 12 microbial species; co-designed annotation protocols with microbiologists to ensure ground-truth integrity.}
-        \item {Built end-to-end ML infrastructure---PyTorch training framework, data pipelines, and containerized inference (Docker/GCP)---taking each model from mathematical formulation to deployed system.}
-      \end{cvitems}
+\begin{cvitems}
+\item {nnU-Net models for volumetric brain MRI segmentation, with distinct multi-scale feature-extraction strategies.}
+\item {Inference-pipeline optimization for the \textbf{VolBrain} platform (\textbf{700k+} MRI volumes): bottleneck analysis from NIfTI ingest to voxel-level prediction.}
+\end{cvitems}
     }
-
 %---------------------------------------------------------
-  \cventry
-    {AI Research Intern --- Industrial Bachelor's Project} % Job title
-    {Neurocatching} % Organization
-    {Valencia, Spain} % Location
-    {2022 -- 2023} % Date(s)
+\cvkeep
+\cventry
+    {ML Engineer}
+    {Neurocatching}
+    {Valencia, Spain}
+    {2022 -- 2023}
     {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Built ML models for temporal gaze-pattern analysis: extracted features from raw ocular movement sequences, designed predictive pipelines, and evaluated against behavioural ground truth.}
-      \end{cvitems}
+\begin{cvitems}
+\item {Temporal gaze-pattern models from raw ocular-movement sequences.}
+\end{cvitems}
     }
-
 %---------------------------------------------------------
-  \cventry
-    {ML Engineering Intern} % Job title
-    {Sciling} % Organization
-    {Valencia, Spain} % Location
-    {2022} % Date(s)
+\cvkeep
+\cventry
+    {AI Consultant}
+    {Sciling}
+    {Valencia, Spain}
+    {2022}
     {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Early exposure to large language models (GPT-2/3) and Diffusion Models; contributed to applied NLP and generative modelling projects.}
-      \end{cvitems}
+\begin{cvitems}
+\item {AI consulting for external clients: conversational systems on GPT-3-era LLMs, applied NLP, and generative models.}
+\item {\todo{what I built, exactly, at Sciling}}
+\end{cvitems}
     }
-
 %---------------------------------------------------------
 \end{cventries}
+
+\begin{cvparagraph}
+\todo{N} h/week, remote or hybrid from Valencia, alongside my role as CTO of Mycrospace.
+\end{cvparagraph}

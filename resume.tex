@@ -6,7 +6,7 @@
 % https://github.com/posquit0/Awesome-CV
 %
 % Customized for: Jaume Ivars Grimalt
-% Target Role: Research Scientist / Scientist-Builder
+% Standard CV: Machine Learning Engineer, Computer Vision & Production Systems
 %
 
 
@@ -24,17 +24,23 @@
 % Color for highlights
 \definecolor{awesome}{HTML}{2B547E}
 
-% Colors for text
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
-
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{true}
 
 % If you would like to change the social information separator from a pipe (|) to something else
-\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+\renewcommand{\acvHeaderSocialSep}{\hspace{0.55em}\textbar\hspace{0.55em}}
+\renewcommand{\acvHeaderAfterSocialSkip}{3.5mm}
+
+% Visible placeholders --- never invent missing facts (textnormal: survive \scshape)
+\newcommand{\todo}[1]{\textnormal{\textcolor{red}{[TODO: #1]}}}
+
+% Discourage orphan section heads and widow lines
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+
+% Keep entries from splitting across pages (tabular* is a box; this stops a break before it)
+\newcommand{\cvkeep}{\par\nopagebreak}
 
 % Fix skills table overflow
 \renewenvironment{cvskills}{%
@@ -54,15 +60,15 @@
 %	PERSONAL INFORMATION
 %-------------------------------------------------------------------------------
 \name{Jaume}{Ivars Grimalt}
-\position{Research Scientist{\enskip\cdotp\enskip}Applied ML \& Vision}
-\address{Valencia, Spain --- Open to: London, Zurich, US}
+\position{Machine Learning Engineer{\enskip\cdotp\enskip} Computer Vision \& Production Systems}
+\address{Valencia, Spain --- remote across EU/US timezones}
 
-\mobile{(+34) 6900183644}
-\email{jaumeig95@gmail.com}
-% \homepage{www.yourwebsite.com}
+\mobile{(+34) 690183644}
+\email{jaume@jaumeivars.com}
 \github{jaume2000}
-\linkedin{jaume-ivars-grimalt}
-% \googlescholar{googlescholar-id}{Jaume Ivars Grimalt}
+\homepage{jaumeivars.com}
+
+\photo[circle,edge,left]{./photo.jpeg}
 
 
 %-------------------------------------------------------------------------------
@@ -79,13 +85,13 @@
 
 
 %-------------------------------------------------------------------------------
-%	CV/RESUME CONTENT
+%	CONTENT
 %-------------------------------------------------------------------------------
 \input{resume/summary.tex}
 \input{resume/skills.tex}
 \input{resume/experience.tex}
+\input{resume/opensource.tex}
 \input{resume/education.tex}
-\input{resume/honors.tex}
 
 
 %-------------------------------------------------------------------------------
