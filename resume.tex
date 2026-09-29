@@ -6,7 +6,7 @@
 % https://github.com/posquit0/Awesome-CV
 %
 % Customized for: Jaume Ivars Grimalt
-% Standard CV: Machine Learning Engineer, Computer Vision & Production Systems
+% Standard CV: Computer Vision Engineer — full-time search (Europe, open to relocation)
 %
 
 
@@ -15,11 +15,55 @@
 %-------------------------------------------------------------------------------
 \documentclass[11pt, a4paper]{awesome-cv}
 
+% PAGE COUNT: this document is now TWO pages. The new Mycrospace licensing/architecture bullet,
+% the Vesta-Z bullets, the LLM lines and the rewritten ConvNeXt block added roughly 10 lines, which
+% is more than the single page had left. Page 2 currently holds only Education & Awards, about
+% five lines, so it reads as a spill rather than a designed second page. Nothing was trimmed to
+% avoid this, as instructed. Options, in rough order of how little they cost:
+%   1. Drop the header photo. It is the tallest single object in the document.
+%   2. Move Education & Awards above Projects, so the sparse page 2 holds the ConvNeXt block
+%      instead, which at least gives page 2 something substantial.
+%   3. Cut the Mycrospace stack bullet down to the two or three technologies that matter.
+%   4. Accept two pages and let Education breathe.
+%
 % Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+% Was 1.4/.8/1.4/1.8. The CV used to run 1.4 pages, leaving page 2 half empty; everything below
+% is tuned for density.
+\geometry{left=1.35cm, top=.7cm, right=1.35cm, bottom=0.85cm, footskip=.35cm}
+
+% Class defaults are 3mm / 2.5mm. Tightened so sections sit closer to their content.
+\renewcommand{\acvSectionTopSkip}{1.3mm}
+\renewcommand{\acvSectionContentTopSkip}{1.8mm}
+
+% Type scale reduced from the class defaults so the whole CV lands on one dense page.
+% These override the class styles from the preamble; awesome-cv.cls itself is untouched.
+% Section heads 16pt -> 14.5pt, body/description 9pt -> 8.6pt, entry titles 10pt -> 9.6pt.
+\makeatletter
+\renewcommand*{\sectionstyle}[1]{{\fontsize{14.5pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
+\renewcommand*{\paragraphstyle}{\fontsize{8.6pt}{1em}\bodyfontlight\upshape\color{text}}
+\renewcommand*{\descriptionstyle}[1]{{\fontsize{8.6pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\renewcommand*{\entrytitlestyle}[1]{{\fontsize{9.6pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\renewcommand*{\entrylocationstyle}[1]{{\fontsize{8.6pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+\renewcommand*{\skilltypestyle}[1]{{\fontsize{9.4pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\renewcommand*{\skillsetstyle}[1]{{\fontsize{8.6pt}{1em}\bodyfontlight\color{text} #1}}
+\renewcommand*{\honortitlestyle}[1]{{\fontsize{8.6pt}{1em}\bodyfont\color{graytext} #1}}
+\renewcommand*{\honorpositionstyle}[1]{{\fontsize{8.6pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\renewcommand*{\honordatestyle}[1]{{\fontsize{8.6pt}{1em}\bodyfont\color{graytext} #1}}
+\renewcommand*{\honorlocationstyle}[1]{{\fontsize{8.6pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+
+% Header name 32pt -> 27pt.
+\renewcommand*{\headerfirstnamestyle}[1]{{\fontsize{27pt}{1em}\headerfontlight\color{graytext} #1}}
+\renewcommand*{\headerlastnamestyle}[1]{{\fontsize{27pt}{1em}\headerfont\bfseries\color{text} #1}}
+\makeatother
 
 % Specify the location of the included fonts
 \fontdir[fonts/]
+
+% Body text on Roboto (local), not Source Sans Pro: SSP maps U+002D/U+2011 to the same
+% glyph, so PDF text extraction turns every ASCII hyphen into U+2011 (ATS-breaking).
+\renewcommand*{\bodyfont}{\headerfont}
+\renewcommand*{\bodyfontlight}{\headerfontlight}
+\renewcommand*{\footerfont}{\headerfont}
 
 % Color for highlights
 \definecolor{awesome}{HTML}{2B547E}
@@ -29,18 +73,126 @@
 
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\hspace{0.55em}\textbar\hspace{0.55em}}
-\renewcommand{\acvHeaderAfterSocialSkip}{3.5mm}
+% Class default is 6mm; tightened to close the gap between the contact row and the first section.
+\renewcommand{\acvHeaderAfterSocialSkip}{1.5mm}
 
-% Visible placeholders --- never invent missing facts (textnormal: survive \scshape)
+% Missing facts are marked as "% TODO:" comments in the source. This red marker is used only in
+% the one spot where an omission would silently render as a broken date range.
 \newcommand{\todo}[1]{\textnormal{\textcolor{red}{[TODO: #1]}}}
+
+% No automatic hyphenation (avoids microbiol- / ogists style breaks). Stretch instead.
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\pretolerance=10000
+\tolerance=3000
+\emergencystretch=2.5em
 
 % Discourage orphan section heads and widow lines
 \clubpenalty=10000
 \widowpenalty=10000
 \displaywidowpenalty=10000
+\brokenpenalty=10000
 
-% Keep entries from splitting across pages (tabular* is a box; this stops a break before it)
-\newcommand{\cvkeep}{\par\nopagebreak}
+% Keep entries from splitting across pages (tabular* is a box; this stops a break before it).
+% The negative skip also pulls consecutive entries closer; the class leaves them fairly loose.
+\newcommand{\cvkeep}{\par\nopagebreak\vspace{-1.0mm}}
+
+% Header: photo left; name/contact centered. Plain-text contact line (no FontAwesome
+% icons) so ATS extract clean phone/email/links instead of private-use glyphs.
+\makeatletter
+\renewcommand*{\makecvheader}[1][C]{%
+  \newcommand*{\drawphoto}{%
+    \ifthenelse{\isundefined{\@photo}}{}{%
+      \newlength{\photodim}%
+      \ifthenelse{\equal{\@photoshape}{circle}}%
+        {\setlength{\photodim}{1.05cm}}%
+        {\setlength{\photodim}{1.5cm}}%
+      \ifthenelse{\equal{\@photoedge}{edge}}%
+        {\def\@photoborder{darkgray}}%
+        {\def\@photoborder{none}}%
+      \begin{tikzpicture}%
+        \node[\@photoshape, draw=\@photoborder, line width=0.3mm,
+          inner sep=\photodim, fill overzoom image=\@photo] () {};
+      \end{tikzpicture}%
+    }%
+  }%
+  \newlength{\headerphotowidth}%
+  \newlength{\headertextwidth}%
+  \ifthenelse{\isundefined{\@photo}}{%
+    \setlength{\headerphotowidth}{0cm}%
+    \setlength{\headertextwidth}{\textwidth}%
+  }{%
+    \setlength{\headerphotowidth}{2.2cm}%
+    \setlength{\headertextwidth}{\dimexpr\textwidth-2\headerphotowidth\relax}%
+  }%
+  \noindent
+  \begin{minipage}[t]{\headerphotowidth}%
+    \vspace{0pt}%
+    \raggedright\drawphoto
+  \end{minipage}%
+  \begin{minipage}[t]{\headertextwidth}%
+    \vspace{0pt}%
+    \centering
+    \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
+    \\[\acvHeaderAfterNameSkip]%
+    \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
+    \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
+    \headersocialstyle{%
+      \newbool{isstart}%
+      \setbool{isstart}{true}%
+      \ifthenelse{\isundefined{\@mobile}}{}{%
+        \@mobile%
+        \setbool{isstart}{false}%
+      }%
+      \ifthenelse{\isundefined{\@email}}{}{%
+        \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+        \href{mailto:\@email}{\@email}%
+      }%
+      \ifthenelse{\isundefined{\@homepage}}{}{%
+        \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+        \href{https://\@homepage}{\@homepage}%
+      }%
+      \\[\acvHeaderAfterNameSkip]%
+      \setbool{isstart}{true}%
+      \ifthenelse{\isundefined{\@github}}{}{%
+        \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+        \href{https://github.com/\@github}{github.com/\@github}%
+      }%
+      \ifthenelse{\isundefined{\@linkedin}}{}{%
+        \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+        \href{https://www.linkedin.com/in/\@linkedin}{linkedin.com/in/\@linkedin}%
+      }%
+      \ifthenelse{\isundefined{\@googlescholarid}}{}{%
+        \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+        \href{https://scholar.google.com/citations?user=\@googlescholarid}{\@googlescholarname}%
+      }%
+    }\\[\acvHeaderAfterSocialSkip]%
+  \end{minipage}%
+  \begin{minipage}[t]{\headerphotowidth}%
+    \vspace{0pt}%
+    \hfill
+  \end{minipage}%
+  \par
+}
+
+% ATS: never use \scshape (extracts as ViSiON / ENGiNEER) or \MakeUppercase on fancy fonts.
+% Keep source lettercase as-is.
+\renewcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\bfseries\color{awesome}#1}}
+\renewcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\color{graytext}#1}}
+\renewcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\color{lighttext}#1}}
+\renewcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\color{text}#1}}
+
+% Education/award row without an empty description cell (which still costs vertical space).
+\newcommand*{\cvdegree}[4]{%
+  \vspace{-2.0mm}%
+  \setlength\tabcolsep{0pt}%
+  \setlength{\extrarowheight}{0pt}%
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+    \entrypositionstyle{#1} & \entrydatestyle{#4}
+  \end{tabular*}%
+}
+\makeatother
 
 % Fix skills table overflow
 \renewenvironment{cvskills}{%
@@ -60,15 +212,18 @@
 %	PERSONAL INFORMATION
 %-------------------------------------------------------------------------------
 \name{Jaume}{Ivars Grimalt}
-\position{Machine Learning Engineer{\enskip\cdotp\enskip} Computer Vision \& Production Systems}
-\address{Valencia, Spain --- remote across EU/US timezones}
+\position{Computer Vision Engineer}
+% Location + relocation intent. No freelance / part-time availability.
+\address{Valencia, Spain · open to relocation}
 
-\mobile{(+34) 690183644}
-\email{jaume@jaumeivars.com}
-\github{jaume2000}
+\mobile{+34 690 183 644}
+\email{jaumeig95@gmail.com}
 \homepage{jaumeivars.com}
+\github{jaume2000}
+\linkedin{jaume-ivars-grimalt}
+\googlescholar{b5gMLtMAAAAJ}{Google Scholar}
 
-\photo[circle,edge,left]{./photo.jpeg}
+\photo[circle,edge,left]{./PFP.jpeg}
 
 
 %-------------------------------------------------------------------------------
@@ -91,7 +246,9 @@
 \input{resume/skills.tex}
 \input{resume/experience.tex}
 \input{resume/opensource.tex}
+\input{resume/publications.tex}
 \input{resume/education.tex}
+\input{resume/languages.tex}
 
 
 %-------------------------------------------------------------------------------

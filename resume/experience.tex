@@ -4,6 +4,8 @@
 \cvsection{Experience}
 %-------------------------------------------------------------------------------
 % CONTENT
+% Reverse chronological: Mycrospace → MIALAB → Tapstar → Vesta-Z → Neurocatching → Sciling
+% Each role is a full \cventry so ATS parsers get separate Position / Company / Dates.
 %-------------------------------------------------------------------------------
 \begin{cventries}
 %---------------------------------------------------------
@@ -14,55 +16,80 @@
     {Valencia, Spain}
     {Jan 2024 -- Present}
     {
-      Computer-vision product for microbiology, in production. Concurrently part-time with MIALAB (May 2025 -- Jan 2026).
-      \vspace{4.0mm}
 \begin{cvitems}
-\item {Formulated high-density colony counting ($>$300 overlapping colonies per plate) as density estimation; designed proprietary \mbox{Density Map Regressors} with Bayesian priors. Object detection at \textbf{67 mAP50-95} and \textbf{95\% median accuracy} against expert microbiologist annotation.}
-\item {Built the full system: PyTorch training framework, data pipelines, containerized inference (Docker/GCP), REST API (NestJS/Prisma), webapp (Next.js/TypeScript). Own dataset of \textbf{3,500} annotated images across \textbf{12} microbial species; annotation protocols co-designed with microbiologists. \textbf{3,012 GPU-hours} of training.}
-\item {\textbf{5 laboratories} using the product in production today. Supervise one full-stack developer (frontend and backend) since \todo{since when}.}
+\item {Computer vision for microbiology. Started in 2024 as my Master's thesis; the company was incorporated in January 2026.}
+\item {\textbf{Modelling \& research.} Developed our own detector with ConvNeXt architecture inspired by YOLO and DQ-DETR, trained from scratch on our own data.}
+\item {Flexible detection from ~10 to ~2000 objects per image.}
+\item {Colony detection at \textbf{62.4 mAP50, 42.5 mAP50-95}. Validated against expert microbiologists: 75\% recall and 90\% precision.}
+\item {\textbf{Training \& HPC.} More than \textbf{12,500 GPU-hours} on the Leonardo supercomputer under two EuroHPC AI Factory compute allocations in the computational biology domain. Multi-GPU training on \textbf{4x A100} with DDP, AMP and torch.compile under SLURM, with chained jobs that resume from checkpoint when wall clock runs out.}
+\item {Own training framework, not third-party scripts. Cross-validation and ensembles with weighted box fusion.}
+\item {\textbf{1,500} images annotated out of \textbf{5,000} across several species under protocols written with microbiologists. I developed our own weakly-supervised labelling tools: click $\rightarrow$ crop $\rightarrow$ 4-channel CNN with a Gaussian heatmap $\rightarrow$ bbox regression. Annotation versioning so the model improves as labels improve thanks to scoring images with k-folding.}
+\item {\textbf{MLOps \& infrastructure.} Containerised inference with queue workers on BullMQ and Redis; image upload via signed URLs and bucket triggers; real-time events over SSE/WebSocket.}
+\item {It runs on GCP (Cloud Run, Cloud SQL, GCS and Cloud Scheduler), product monitoring with PostHog, and internal LLMs for automations.}
+\item {\textbf{Product engineering.} NestJS/Prisma backend over PostgreSQL; MongoDB for annotations. Own schema design. Next.js/TypeScript web client and a React Native/Expo app for the bench.}
+\item {Stripe billing: subscriptions, webhook lifecycle, B2B invoice flows, credit renewal.}
 \end{cvitems}
     }
 %---------------------------------------------------------
 \cvkeep
 \cventry
-    {ML Engineer, part-time}
-    {MIALAB --- Medical Imaging Analysis Laboratory, UPV}
+    {Research Engineer (part-time)}
+    {MIALAB -- Medical Imaging Analysis Laboratory, UPV}
     {Valencia, Spain}
     {May 2025 -- Jan 2026}
     {
 \begin{cvitems}
-\item {nnU-Net models for volumetric brain MRI segmentation, with distinct multi-scale feature-extraction strategies.}
-\item {Inference-pipeline optimization for the \textbf{VolBrain} platform (\textbf{700k+} MRI volumes): bottleneck analysis from NIfTI ingest to voxel-level prediction.}
+\item {Volumetric brain MRI segmentation with nnU-Net, comparing multi-scale feature-extraction strategies.}
+\item {VolBrain has processed \textbf{700k+} MRI volumes, so inference cost scales. Profiled the pipeline from NIfTI ingest to voxel-level prediction to find where the time went.}
 \end{cvitems}
     }
 %---------------------------------------------------------
 \cvkeep
 \cventry
-    {ML Engineer}
+    {Full-Stack Engineer (freelance)}
+    {Tapstar}
+    {Valencia, Spain}
+    {Jan 2025 -- May 2025}
+    {
+\begin{cvitems}
+\item {QR generation, back office, and frontend for QR cards and stands sold to high-street businesses; scan analytics and per-employee ratings.}
+\end{cvitems}
+    }
+%---------------------------------------------------------
+\cvkeep
+\cventry
+    {Data Engineer}
+    {Vesta-Z}
+    {Valencia, Spain}
+    {Jul 2023 -- Feb 2025}
+    {
+\begin{cvitems}
+\item {Full-stack feature work on their cloud product; custom schema for cross-matching items across providers; LLM customer-support bot.}
+\end{cvitems}
+    }
+%---------------------------------------------------------
+\cvkeep
+\cventry
+    {Data Scientist Intern}
     {Neurocatching}
     {Valencia, Spain}
-    {2022 -- 2023}
+    {Feb 2023 -- Aug 2023}
     {
 \begin{cvitems}
-\item {Temporal gaze-pattern models from raw ocular-movement sequences.}
+\item {Eye-gaze model training for neuromarketing studies; data analysis for customer behaviour and sales.}
 \end{cvitems}
     }
 %---------------------------------------------------------
 \cvkeep
 \cventry
-    {AI Consultant}
+    {Backend Developer Intern}
     {Sciling}
     {Valencia, Spain}
-    {2022}
+    {Jun 2022 -- Sep 2022}
     {
 \begin{cvitems}
-\item {AI consulting for external clients: conversational systems on GPT-3-era LLMs, applied NLP, and generative models.}
-\item {\todo{what I built, exactly, at Sciling}}
+\item {Conversational systems on GPT-3-era LLMs, applied NLP, and early diffusion models.}
 \end{cvitems}
     }
 %---------------------------------------------------------
 \end{cventries}
-
-\begin{cvparagraph}
-\todo{N} h/week, remote or hybrid from Valencia, alongside my role as CTO of Mycrospace.
-\end{cvparagraph}

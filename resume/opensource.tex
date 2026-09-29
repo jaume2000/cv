@@ -1,5 +1,4 @@
-% Keep the section heading with its first entry (no new packages)
-\vspace{0pt plus 1fill}\penalty-200\vspace{0pt plus -1fill}
+\pagebreak
 \cvsection{Projects}
 \nopagebreak
 %-------------------------------------------------------------------------------
@@ -9,30 +8,17 @@
 %---------------------------------------------------------
 \cvkeep
 \cventry
-    {ImageNet-1k reproduction on EuroHPC (Leonardo)}
+    {Own training framework on EuroHPC (Leonardo Booster)}
     {ConvNeXt-V1 trained from scratch}
     {}
     {}
     {
 \begin{cvitems}
-\item {\textbf{1,687 GPU-hours} consumed to date; training ongoing. \todo{final top-1}. \todo{GPU count and type}. \todo{technical problem diagnosed}. \href{https://github.com/jaume2000/convnext_v1}{github.com/jaume2000/convnext\_v1}}
+% TODO: total GPU-hours for the finished run. The 1,687 figure was mid-run and is now stale.
+\item {Trained on \textbf{4x A100} on Leonardo Booster with a training framework.}
+\item {ConvNeXt-Tiny, \textbf{28M} parameters, \textbf{81\% top-1} on ImageNet-1k over \textbf{300 epochs} with timm augmentation (82.1\% reported in the original paper). A close replication, which is the point: it gives me a baseline I own. \href{https://github.com/jaume2000/convnext_v1}{github.com/jaume2000/convnext\_v1}}
+\item {In progress on that baseline: redundant-parameter search, and reparametrisation of residual blocks interpreted as steps of an Euler solver.}
 \end{cvitems}
     }
-%---------------------------------------------------------
-\cvkeep
-\cventry
-    {TypeScript + canvas, runs in the browser}
-    {Universal two-tape Turing machine}
-    {}
-    {}
-    {\href{https://github.com/jaume2000/IvarsTurinMachine}{github.com/jaume2000/IvarsTurinMachine}}
-%---------------------------------------------------------
-\cvkeep
-\cventry
-    {Interactive canvas animations}
-    {CanvasGraph}
-    {}
-    {}
-    {\href{https://github.com/jaume2000/CanvasGraph}{github.com/jaume2000/CanvasGraph}}
 %---------------------------------------------------------
 \end{cventries}
