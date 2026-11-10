@@ -1,0 +1,62 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Customized for: Jaume Ivars Grimalt
+% Standard CV: Computer Vision Engineer — full-time search (Europe, open to relocation)
+%
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+\documentclass[11pt, a4paper]{../awesome-cv}
+\usepackage{../cv-common}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+\name{Jaume}{Ivars Grimalt}
+\position{ML \& Computer Vision}
+% Location + relocation intent. No freelance / part-time availability.
+\address{Currently in Valencia, Spain | EU citizen | Open to relocation to Zurich, Munich, London}
+
+\mobile{+34 690 183 644}
+\email{jaumeig95@gmail.com}
+\homepage{jaumeivars.com}
+\github{jaume2000}
+\linkedin{jaume-ivars-grimalt}
+\googlescholar{b5gMLtMAAAAJ}{Google Scholar}
+
+\photo[circle,edge,left]{../PFP.jpeg}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal information
+\makecvheader[C]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+\makecvfooter
+  {\today}
+  {Jaume Ivars Grimalt~~~·~~~CV}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+
+\input{summary.tex}
+\input{skills.tex}
+\input{experience.tex}
+\input{education.tex}
+\input{publications.tex}
+% \input{opensource.tex}  % Projects folded into the One Block publication line
+
+
+%-------------------------------------------------------------------------------
+\end{document}

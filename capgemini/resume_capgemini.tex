@@ -1,0 +1,53 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Capgemini CV: software and data. Same layout as resume_software.tex.
+% Do not add Kubernetes, Airflow, Angular, JUnit, Mockito, LangChain, Azure or AWS.
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+\documentclass[11pt, a4paper]{../awesome-cv}
+\usepackage{../cv-common}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+\name{Jaume}{Ivars Grimalt}
+\position{Software Engineer · Backend, Data \& ML}
+\address{Currently in Valencia, Spain | Open to relocation to Madrid or Barcelona}
+
+\mobile{+34 690 183 644}
+\email{jaumeig95@gmail.com}
+\homepage{jaumeivars.com}
+\github{jaume2000}
+\linkedin{jaume-ivars-grimalt}
+\googlescholar{b5gMLtMAAAAJ}{Google Scholar}
+
+\photo[circle,edge,left]{../PFP.jpeg}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makecvheader[C]
+
+\makecvfooter
+  {\today}
+  {Jaume Ivars Grimalt~~~·~~~CV}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\input{summary.tex}
+\input{skills.tex}
+\input{experience.tex}
+\input{../resume/education.tex}
+\input{../software/publications.tex}
+
+
+%-------------------------------------------------------------------------------
+\end{document}

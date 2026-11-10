@@ -1,0 +1,99 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Motivation letter for the Medical Data Science Group, ETH Zurich.
+% Same fonts and colors as resume/resume_eth.tex (Roboto, awesome blue, dark text).
+%
+% Logos: eth.png is eth.jpg trimmed. eth_mds.svg is ethz_mds.svg with white
+% fills turned black so the mark is visible on paper (the source file is a
+% white wordmark). PDF via inkscape, included below without shell-escape.
+%   inkscape eth_mds.svg --export-type=pdf --export-filename=eth_mds.pdf
+
+\documentclass[11pt, a4paper]{../awesome-cv}
+\usepackage{../cv-common}
+
+\geometry{left=1.65cm, top=1.25cm, right=1.65cm, bottom=1.35cm}
+
+\hypersetup{%
+  pdftitle={Motivation Letter, Medical Data Science Group, ETH Zurich},
+  pdfauthor={Jaume Ivars Grimalt}%
+}
+
+\name{Jaume}{Ivars Grimalt}
+\mobile{+34 690 183 644}
+\email{jaumeig95@gmail.com}
+\homepage{jaumeivars.com}
+\github{jaume2000}
+\linkedin{jaume-ivars-grimalt}
+\googlescholar{b5gMLtMAAAAJ}{Google Scholar}
+
+\begin{document}
+\pagestyle{empty}
+
+\noindent
+\begin{minipage}[t]{0.50\textwidth}
+  \vspace{0pt}
+  \raggedright
+  {\headerfirstnamestyle{Jaume}\headerlastnamestyle{{}\acvHeaderNameDelim Ivars Grimalt}\par}
+  \vspace{1.1mm}
+  {\headersocialstyle
+    +34 690 183 644\acvHeaderSocialSep\href{mailto:jaumeig95@gmail.com}{jaumeig95@gmail.com}\par
+    \href{https://jaumeivars.com}{jaumeivars.com}\acvHeaderSocialSep
+    \href{https://github.com/jaume2000}{github.com/jaume2000}\par
+    \href{https://www.linkedin.com/in/jaume-ivars-grimalt}{linkedin.com/in/jaume-ivars-grimalt}\acvHeaderSocialSep
+    \href{https://scholar.google.com/citations?user=b5gMLtMAAAAJ}{Google Scholar}\par
+  }
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+  \vspace{0pt}
+  \raggedleft
+  \includegraphics[height=1cm]{eth.png}\hspace{1.8mm}%
+  \includegraphics[height=1cm]{eth_mds.pdf}%
+\end{minipage}
+
+\vspace{5.5mm}
+{\fontsize{10pt}{12.4pt}\bodyfont\color{graytext} November 2026\par}
+\vspace{1.6mm}
+{\fontsize{10.5pt}{13pt}\bodyfont\bfseries\color{darktext} Prof.\ Julia Vogt\par}
+{\fontsize{10pt}{12.6pt}\bodyfont\color{graytext}
+  Medical Data Science Group\par
+  ETH Zurich\par
+}
+
+\vspace{4.2mm}
+\bodyfont
+\fontsize{10.5pt}{13.35pt}\selectfont
+\color{black}
+\frenchspacing
+\setlength{\parskip}{0.48\baselineskip}
+\setlength{\parindent}{0pt}
+
+Dear Prof.\ Vogt,
+
+I'm applying for the Doctoral Student position in Machine Learning and Medical Data Science in the Medical Data Science Group at ETH Zurich. I'm a computer vision engineer moving into research, with an M.Sc.\ in Artificial Intelligence, Pattern Recognition and Digital Imaging from UPV. I want to work on what deep models represent internally and on how those representations can be read in medical data.
+
+The manuscript I'm writing, \textit{What Extra Euler Steps Reveal About Residual Networks: Feature Dynamics in Weight-Tied and Untied Stages}, studies continuous-depth dynamics in ConvNeXt, Swin and ResNet. I use finer numerical integration without retraining, look at the geometry of trajectories and test per-block weight corrections. One stage of ConvNeXt-T with shared weights, trained from scratch on ImageNet-1k, reaches 80.34\% top-1 with about 9.6M fewer parameters than a baseline of 80.96\%. For me this is representation learning aimed at interpretability. I want to understand what a model holds in its internal states, and I want to ask that of medical foundation models as well.
+
+I have already worked with medical and biological images. At MIALAB (UPV) I worked as a research engineer on volumetric segmentation of brain MRI with nnU-Net, including multi-scale feature strategies, and I profiled volBrain, more than 700k volumes, from NIfTI ingest to voxel prediction. I'm a coauthor of the \textit{Auto-N2N} preprint and of \textit{Detecting Cytopathic Effect in Cell Culture with Computer Vision}, which is under review.
+% TODO: do not describe my role past coauthorship until I write it.
+\todo{my contribution}
+Mycrospace started as my Master's thesis in 2024. I trained my own detector from scratch there, with more than 12,500 GPU-hours on Leonardo (EuroHPC). Labels were scarce: 1,500 of 5,000 images, annotated with microbiologists. Part of the labelling was weakly supervised, and the label sets were versioned. I scored them with k-fold and evaluated the model with k-fold cross-validation. The detector was tested in five laboratories. What I take from that project is the combination of scarce labels, k-fold evaluation and annotation done with domain experts.
+
+I want to join this group because
+% TODO: personal reason for this group and for medicine, in my own words.
+\todo{personal motivation, in my words}.
+The paper from the group that connects with this is
+% TODO: one concrete MDS paper that links to representation learning or interpretability.
+\todo{a specific paper from the group that connects with my interests}.
+
+As a writing sample I attach the preprint of my preliminary results. I'm an EU citizen based in Valencia and open to relocating to Zurich. I could start on
+% TODO: intended start date.
+\todo{start date}.
+
+\vspace{1.2mm}
+Kind regards,
+
+\vspace{3.2mm}
+{\letternamestyle{Jaume Ivars Grimalt}}
+
+\end{document}

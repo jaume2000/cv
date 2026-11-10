@@ -1,0 +1,59 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Cover letter. Same header, fonts and colors as the CV.
+
+\documentclass[11pt, a4paper]{../awesome-cv}
+\usepackage{../cv-common}
+
+\geometry{left=2.2cm, top=1.55cm, right=2.2cm, bottom=1.8cm}
+
+\hypersetup{%
+  pdftitle={Cover Letter},
+  pdfauthor={Jaume Ivars Grimalt}%
+}
+
+\name{Jaume}{Ivars Grimalt}
+\mobile{+34 690 183 644}
+\email{jaumeig95@gmail.com}
+\homepage{jaumeivars.com}
+\github{jaume2000}
+\linkedin{jaume-ivars-grimalt}
+\googlescholar{b5gMLtMAAAAJ}{Google Scholar}
+
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\pretolerance=10000
+\tolerance=3000
+\emergencystretch=3em
+
+\begin{document}
+\pagestyle{empty}
+\makecvheader[C]
+
+\vspace{8mm}
+
+\bodyfont
+\fontsize{11pt}{14.6pt}\selectfont
+\color{text}
+\setlength{\parskip}{0.72\baselineskip}
+\setlength{\parindent}{0pt}
+
+{\color{graytext}\today\par}
+
+Hello,
+
+I'm Jaume Ivars Grimalt, a software and machine learning engineer from Valencia. I grew up in a small town and studied Computer Engineering and then a Master's in Artificial Intelligence at the Universitat Politècnica de València (UPV). I made my own path from there. I've learned everything I know by my own effort, by building things. More of that is at jaumeivars.com.
+
+I started working while I was still studying, first as a backend intern at Sciling and then on eye-gaze models at Neurocatching and on cloud and data work at Vesta-Z. My Master's thesis was a computer vision system to detect and count colonies in microbiology lab images. It got honours. That project became Mycrospace, the startup I co-founded. Mycrospace won several prizes, starting with first prize at IdeasUPV in 2024, then the Bioval Young Talent prize, among others.
+
+As CTO I was the only engineer, so I built the whole product myself, including the backend and job queues, the cloud infrastructure on Google Cloud, the web and mobile apps and the detection model, which I trained from scratch with more than 12,500 GPU-hours on the Leonardo supercomputer using several GPUs for training big models. We created our own dataset and self-supervised training systems to build the detectors. We got more than 700 users across 35 countries. The product was tested in five labs and I also managed an intern. I also spent eight months as a research engineer at MIALAB, the medical imaging lab at UPV, working on brain MRI segmentation with GPU clusters an more than 700k 3D images.
+
+I learn best this way, picking a hard problem and going deep until I understand how every part works. I'm very curious, so in my free time I started my own frontier research on EuroHPC. Right now I'm writing a paper on how representations evolve inside deep vision networks, using models I trained from scratch on ImageNet. I think I've already shown I can learn anything.
+
+I'm now looking for a team that knows more than me, so I can learn from senior people, in software engineering or machine learning. I'm based in Valencia and open to relocating. My CV is attached, and I'd be happy to talk if you think I could be a good fit.
+
+Best regards,\\
+Jaume Ivars Grimalt\\
++34 690 183 644 | jaumeig95@gmail.com | linkedin.com/in/jaume-ivars-grimalt
+
+\end{document}

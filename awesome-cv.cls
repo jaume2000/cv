@@ -95,7 +95,8 @@
 %-------------------------------------------------------------------------------
 % Configure a directory location for fonts(default: 'fonts/')
 \newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
-\fontdir
+% CVs live in subfolders; the font files stay at the project root.
+\IfFileExists{fonts/Roboto-Regular.ttf}{\fontdir[fonts/]}{\fontdir[../fonts/]}
 
 
 %-------------------------------------------------------------------------------

@@ -1,0 +1,158 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Customized for: Jaume Ivars Grimalt
+% AI Engineer CV for data and AI consultancies. Same layout as resume/resume.tex.
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+\documentclass[11pt, a4paper]{../awesome-cv}
+\usepackage{../cv-common}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+\name{Jaume}{Ivars Grimalt}
+\position{AI Engineer}
+% Location + relocation intent. No freelance / part-time availability.
+\address{Currently in Valencia, Spain | EU citizen | Open to relocation to Zurich, Munich, London}
+
+\mobile{+34 690 183 644}
+\email{jaumeig95@gmail.com}
+\homepage{jaumeivars.com}
+\github{jaume2000}
+\linkedin{jaume-ivars-grimalt}
+\googlescholar{b5gMLtMAAAAJ}{Google Scholar}
+
+\photo[circle,edge,left]{../PFP.jpeg}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal information
+\makecvheader[C]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+\makecvfooter
+  {\today}
+  {Jaume Ivars Grimalt~~~·~~~CV}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\cvsection{Profile}
+
+\begin{cvparagraph}
+I take models from the idea to production: data, training, deployment, backend and cloud. At Mycrospace I was the only engineer and built the whole stack, from a Master's thesis to a computer vision product used by 700 users in 35 countries.
+\end{cvparagraph}
+
+\cvsection{Technical Skills}
+\begin{cvskills}
+  \cvskill
+    {ML/DL}
+    {PyTorch (DDP, AMP, torch.compile), TensorFlow/TFLite, Hugging Face, timm, scikit-learn, OpenCV, pandas, ONNX}
+  \cvskill
+    {MLOps \& cloud}
+    {GCP (Cloud Run, Cloud SQL, GCS), Hetzner/Dokploy, Docker, Redis/BullMQ, CI/CD, SLURM}
+  \cvskill
+    {Backend \& data}
+    {Python, Flask, NestJS, PostgreSQL/Prisma, MongoDB}
+  \cvskill
+    {Generative AI}
+    {LLMs via API, agents, diffusion (LDM, ControlNet, IP-Adapter)}
+\end{cvskills}
+
+\cvsection{Experience}
+\begin{cventries}
+\cvkeep
+\cventry
+    {Co-Founder \& CTO}
+    {Mycrospace}
+    {Valencia, Spain}
+    {Jan 2024 – Oct 2026}
+    {
+\begin{cvitems}
+\item {Computer vision product for microbiology labs. Master's thesis (2024) to company (Jan 2026). Sole engineer; built the whole stack. \textbf{700} users in 35 countries; tested in \textbf{5 labs}. 1st Prize IdeasUPV (2024).}
+\item {\textbf{Production.} Event-based image pipeline: BullMQ/Redis queues, a Python Flask inference service, signed-URL uploads and SSE/WebSocket. Docker on GCP (Cloud Run, Cloud SQL, GCS), migrated to Hetzner/Dokploy to cut costs. NestJS/Prisma/PostgreSQL, MongoDB, Next.js, React Native/Expo and Stripe.}
+\item {\textbf{MLOps.} \textbf{1,500}/\textbf{5,000} images annotated with microbiologists. Annotation versioning in MongoDB, k-fold CV, WBF ensembles, Cleanlab label audits and retraining on real client data. Vision models quantized and compiled with TFLite for edge.}
+\item {\textbf{Models.} Own ConvNeXt detector (YOLO and DQ-DETR-inspired) for small objects and dense scenes; ~10–2000 colonies/image. \textbf{67 mAP50-95}; 92\% recall / 93\% precision. \textbf{12,500+} GPU-hours on Leonardo (two EuroHPC AI Factory allocations), \textbf{4x A100}, DDP/AMP/torch.compile on SLURM, checkpoint-resumed jobs.}
+\end{cvitems}
+    }
+\cvkeep
+\cventry
+    {Research Engineer (full-time)}
+    {MIALAB: Medical Imaging Analysis Laboratory, UPV}
+    {Valencia, Spain}
+    {May 2025 – Jan 2026}
+    {
+\begin{cvitems}
+\item {Volumetric brain MRI segmentation with nnU-Net. Profiled volBrain (\textbf{700k+} volumes) from NIfTI ingest to voxel prediction for inference cost.}
+\end{cvitems}
+    }
+\cvkeep
+\cventry
+    {Full-Stack Engineer (freelance)}
+    {Tapstar}
+    {Valencia, Spain}
+    {Jan 2025 – May 2025}
+    {
+\begin{cvitems}
+\item {Client delivery: QR generation, a back office and the frontend.}
+\end{cvitems}
+    }
+\cvkeep
+\cventry
+    {Data Engineer}
+    {Vesta-Z}
+    {Valencia, Spain}
+    {Jul 2023 – Feb 2025}
+    {
+\begin{cvitems}
+\item {Cloud product features and a custom database schema so items could be cross-matched across providers. Delivered an LLM customer-support bot.}
+\end{cvitems}
+    }
+\end{cventries}
+\vspace{0.4mm}
+\noindent{\fontsize{8pt}{1em}\bodyfont\bfseries\color{darktext} Earlier experience:}~~{\fontsize{8pt}{1em}\bodyfontlight\color{text} Neurocatching, Data Scientist Intern, 2023; Sciling, Backend Developer Intern, 2022.}\par
+
+\cvsection{Generative AI}
+\par\nopagebreak
+\vspace{\acvSectionContentTopSkip}
+\vspace{-2.5mm}
+{\bodyfont\fontsize{7.6pt}{0.95em}\selectfont\raggedright
+\noindent\textbullet~~Python pipeline of LLM-based agents that automates profile research and drafts outreach emails and messages.\par
+\vspace{0.15mm}
+\noindent\textbullet~~Prototype, not deployed: synthetic data augmentation with diffusion (LDM, ControlNet and IP-Adapter).\par
+}
+
+\input{../resume/education.tex}
+\vspace{0.4mm}
+\noindent{\fontsize{8pt}{1em}\bodyfont\bfseries\color{darktext} Teaching:}~~{\fontsize{8pt}{1em}\bodyfontlight\color{text} Big Data module, CEI, Valencia, Oct 2026 – Dec 2026.}\par
+
+\cvsection{Publications}
+\par\nopagebreak
+\vspace{\acvSectionContentTopSkip}
+\vspace{-2.5mm}
+{\bodyfont\fontsize{7.6pt}{0.95em}\selectfont\raggedright
+\noindent\textbullet~~\textit{Auto-N2N: Self-supervised MRI Denoising using Synthetic Pair Generation and Mixture of Experts.}
+S.\ Morell-Ortega et al., incl.\ \textbf{J.\ Ivars Grimalt}. Preprint, 2026. \href{https://openreview.net/forum?noteId=1f93N1n8RP}{OpenReview}\par
+\vspace{0.15mm}
+\noindent\textbullet~~\textit{Detecting Cytopathic Effect in Cell Culture with Computer Vision.}
+W.\ Ragazzo, \textbf{J.\ Ivars Grimalt}. Under review.\par
+\vspace{0.15mm}
+\noindent\textbullet~~\textit{What Extra Euler Steps Reveal About Residual Networks: Feature Dynamics in Weight-Tied and Untied Stages.} Manuscript in preparation.\par
+\vspace{0.6mm}
+\noindent{\fontsize{8pt}{1em}\bodyfont\bfseries\color{darktext} Languages:}~~Spanish (native), Catalan (native), English (C1)\par
+}
+
+%-------------------------------------------------------------------------------
+\end{document}

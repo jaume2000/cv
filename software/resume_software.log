@@ -1,12 +1,16 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.2.9)  29 SEP 2026 18:09
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.2.9)  10 NOV 2026 12:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./resume
-(./resume.tex
+**resume_software.tex
+(./resume_software.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
-(./awesome-cv.cls
+(../awesome-cv.cls
+
+LaTeX Warning: You have requested document class `../awesome-cv',
+               but the document class provides `awesome-cv'.
+
 Document Class: awesome-cv 2017/02/05 v1.6.1 Awesome Curriculum Vitae Class
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
@@ -782,32 +786,38 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip82
 ))
+(../cv-common.sty
+
+LaTeX Warning: You have requested package `../cv-common',
+               but the package provides `cv-common'.
+
+Package: cv-common 
+)
 LaTeX Font Info:    Font shape `TU/SourceSansPro(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 230.
+(Font)              scaled to size 10.95pt on input line 32.
+ (./resume_software.aux)
+\openout1 = `resume_software.aux'.
 
-(./resume.aux)
-\openout1 = `resume.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -817,19 +827,19 @@ LaTeX Font Info:    ... okay on input line 230.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(38.41139pt, 520.68509pt, 38.41139pt)
-* v-part:(T,H,B)=(19.91684pt, 800.94499pt, 24.18501pt)
+* h-part:(L,W,R)=(34.14322pt, 529.22144pt, 34.14322pt)
+* v-part:(T,H,B)=(11.38092pt, 813.74908pt, 19.91684pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=520.68509pt
-* \textheight=800.94499pt
-* \oddsidemargin=-33.8586pt
-* \evensidemargin=-33.8586pt
-* \topmargin=-89.35315pt
+* \textwidth=529.22144pt
+* \textheight=813.74908pt
+* \oddsidemargin=-38.12677pt
+* \evensidemargin=-38.12677pt
+* \topmargin=-97.88907pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
-* \footskip=9.95863pt
+* \footskip=14.22636pt
 * \marginparwidth=50.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
@@ -844,133 +854,97 @@ LaTeX Font Info:    ... okay on input line 230.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 230.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 230.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 230.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 230.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 230.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 32.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 230.
-
+(Font)              `operators' in the math version `normal' on input line 32.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 230.
+ line 32.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 230.
+(Font)              `operators' in the math version `bold' on input line 32.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 230.
+t line 32.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 230.
+(Font)              `symbols' in the math version `normal' on input line 32.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 230.
+t line 32.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 230.
+(Font)              `symbols' in the math version `bold' on input line 32.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 230.
+t line 32.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 2
-30.
+(Font)              `largesymbols' in the math version `normal' on input line 3
+2.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 230.
+t line 32.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 230
-.
+(Font)              `largesymbols' in the math version `bold' on input line 32.
+
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 230.
-Package hyperref Info: Link coloring OFF on input line 230.
-(./resume.out) (./resume.out)
+t line 32.
+Package hyperref Info: Link coloring OFF on input line 32.
+(./resume_software.out) (./resume_software.out)
 \@outlinefile=\write4
-\openout4 = `resume.out'.
+\openout4 = `resume_software.out'.
 
 \headerphotowidth=\skip83
 \headertextwidth=\skip84
 \photodim=\skip85
-File: ./PFP.jpeg Graphic file (type bmp)
-<./PFP.jpeg>
+File: ../PFP.jpeg Graphic file (type bmp)
+<../PFP.jpeg>
 
-Overfull \hbox (22.76689pt too wide) in paragraph at lines 233--233
+Overfull \hbox (14.55867pt too wide) in paragraph at lines 34--34
 [][]  
  []
 
-(./resume/summary.tex) (./resume/skills.tex
+(./summary.tex) (./skills.tex
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 10.
+(Font)              scaled to size 10.95116pt on input line 2.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.6658pt on input line 10.
+(Font)              scaled to size 7.6658pt on input line 2.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.47559pt on input line 10.
+(Font)              scaled to size 5.47559pt on input line 2.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 10.
+(Font)              scaled to size 10.94882pt on input line 2.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 10.
+(Font)              scaled to size 7.66417pt on input line 2.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 10.
-) (./resume/experience.tex
-LaTeX Font Info:    Font shape `TU/Roboto(1)/m/sl' in size <8.6> not available
-(Font)              Font shape `TU/Roboto(1)/m/it' tried instead on input line 
-32.
+(Font)              scaled to size 5.47441pt on input line 2.
+) (./experience.tex
 LaTeX Font Info:    Font shape `TU/Roboto(1)/m/sl' in size <8> not available
 (Font)              Font shape `TU/Roboto(1)/m/it' tried instead on input line 
-32.
-LaTeX Font Info:    Calculating math sizes for size <8.6> on input line 32.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.60092pt on input line 32.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.02061pt on input line 32.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 4.30046pt on input line 32.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.59908pt on input line 32.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.01932pt on input line 32.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.29953pt on input line 32.
+17.
+) (../resume/education.tex)
+(./publications.tex) [1
 
-Underfull \hbox (badness 1221) in paragraph at lines 32--32
-[]\TU/Roboto(1)/b/n/8.6 1,500 \TU/Roboto(1)/m/n/8.6 images annotated out of \TU
-/Roboto(1)/b/n/8.6 5,000 \TU/Roboto(1)/m/n/8.6 across several species under pro
-tocols written with microbiologists. I developed our own
- []
-
-) (./resume/opensource.tex
-
-Package fancyhdr Warning: \footskip is too small (9.95863pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\footskip}{13.59999pt}.
-
-[1
-
-]) (./resume/publications.tex) (./resume/education.tex)
-(./resume/languages.tex)
-
-Package fancyhdr Warning: \footskip is too small (9.95863pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\footskip}{13.59999pt}.
-
-[2] (./resume.aux)
+] (./resume_software.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `resume.out' has not changed.
+Package rerunfilecheck Info: File `resume_software.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 32554 strings out of 476878
- 660534 string characters out of 5805250
- 1959627 words of memory out of 5000000
- 53909 multiletter control sequences out of 15000+600000
- 562412 words of font info for 124 fonts, out of 8000000 for 9000
+ 32540 strings out of 476878
+ 660111 string characters out of 5805250
+ 1954627 words of memory out of 5000000
+ 53908 multiletter control sequences out of 15000+600000
+ 560761 words of font info for 112 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 116i,11n,121p,542b,821s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,11n,121p,578b,821s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on resume.pdf (2 pages).
+Output written on resume_software.pdf (1 page).

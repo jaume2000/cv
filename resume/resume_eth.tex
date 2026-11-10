@@ -1,0 +1,168 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% Derived from resume.tex for a PhD application to the Medical Data Science
+% Group at ETH Zurich (Prof. Julia Vogt). Do not edit resume.tex from here.
+%
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+\documentclass[11pt, a4paper]{../awesome-cv}
+\usepackage{../cv-common}
+
+% Body copy is Roboto Thin (\bodyfontlight), which reads as pale gray.
+% Same sizes and layout. Regular weight in near-black for body text only.
+\makeatletter
+\renewcommand*{\paragraphstyle}{\fontsize{8pt}{1em}\bodyfont\upshape\color{black}}
+\renewcommand*{\descriptionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\upshape\color{black} #1}}
+\renewcommand*{\skillsetstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\color{black} #1}}
+\makeatother
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+\name{Jaume}{Ivars Grimalt}
+\position{Machine Learning Research | Computer Vision | Medical Imaging}
+% Location + relocation intent. No freelance / part-time availability.
+\address{Currently in Valencia, Spain | EU citizen | Open to relocation to Zurich, Munich, London}
+
+\mobile{+34 690 183 644}
+\email{jaumeig95@gmail.com}
+\homepage{jaumeivars.com}
+\github{jaume2000}
+\linkedin{jaume-ivars-grimalt}
+\googlescholar{b5gMLtMAAAAJ}{Google Scholar}
+
+\photo[circle,edge,left]{../PFP.jpeg}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal information
+\makecvheader[C]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+\makecvfooter
+  {\today}
+  {Jaume Ivars Grimalt~~~·~~~CV}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\cvsection{Profile}
+
+\begin{cvparagraph}
+Computer vision engineer moving into research. My current work studies representational dynamics in residual vision networks: how features evolve with depth and what that reveals about weight sharing and model internals. I have applied deep learning to medical and biological data, from brain MRI segmentation at MIALAB (UPV) to a microbiology detection system I built from scratch and tested in five laboratories.
+\end{cvparagraph}
+
+\cvsection{Education}
+\nopagebreak
+\begin{cventries}
+\cvkeep
+\cvdegree
+    {UPV · GPA 8.7/10 · Thesis Honours (became Mycrospace)}
+    {M.Sc. Artificial Intelligence, Pattern Recognition \& Digital Imaging}
+    {Valencia, Spain}
+    {2023 – 2024}
+% TODO: thesis title, supervisor
+\cvkeep
+\cvdegree
+    {CDTM (TUM/LMU) · 16 selected}
+    {Technology Management}
+    {Valencia / Munich}
+    {2024}
+% TODO: thesis title, supervisor
+\cvkeep
+\cvdegree
+    {UPV · GPA 8.3/10 · Honours in ML and Statistics}
+    {B.Sc. Computer Engineering}
+    {Valencia, Spain}
+    {2019 – 2023}
+% TODO: thesis title, supervisor
+\end{cventries}
+
+\cvsection{Research}
+\par\nopagebreak
+\vspace{\acvSectionContentTopSkip}
+\vspace{-2.5mm}
+{\bodyfont\fontsize{7.6pt}{0.95em}\selectfont\color{black}\raggedright
+\noindent\textbullet~~\href{https://jaumeivars.com/research/representation-dynamics}{\textit{What Extra Euler Steps Reveal About Residual Networks: Feature Dynamics in Weight-Tied and Untied Stages.}}
+Manuscript in preparation. \href{https://jaumeivars.com/research/representation-dynamics}{jaumeivars.com/research/representation-dynamics}.
+Studies continuous-depth dynamics in ConvNeXt, Swin and ResNet: finer numerical integration without retraining, trajectory geometry and per-block weight corrections.
+With \textasciitilde\textbf{9.6M} fewer parameters, a weight-shared ConvNeXt-T stage trained from scratch on ImageNet-1k reaches \textbf{80.34\%} top-1 (baseline: \textbf{80.96\%}).\par
+}
+% TODO: arXiv link
+
+\cvsection{Publications}
+\par\nopagebreak
+\vspace{\acvSectionContentTopSkip}
+\vspace{-2.5mm}
+{\bodyfont\fontsize{7.6pt}{0.95em}\selectfont\color{black}\raggedright
+\noindent\textbullet~~\textit{Auto-N2N: Self-supervised MRI Denoising using Synthetic Pair Generation and Mixture of Experts.}
+S.\ Morell-Ortega et al., incl.\ \textbf{J.\ Ivars Grimalt}. Preprint, 2026. \href{https://openreview.net/forum?noteId=1f93N1n8RP}{OpenReview}\par
+\vspace{0.15mm}
+\noindent\textbullet~~\textit{Detecting Cytopathic Effect in Cell Culture with Computer Vision.}
+W.\ Ragazzo, \textbf{J.\ Ivars Grimalt}. Under review.\par
+}
+
+\cvsection{Experience}
+\begin{cventries}
+\cvkeep
+\cventry
+    {Co-Founder \& CTO}
+    {Mycrospace}
+    {Valencia, Spain}
+    {2024 – Oct 2026}
+    {
+\begin{cvitems}
+\item {Started as a Master's thesis in 2024. The company was founded in January 2026. Computer vision for microbiology, tested in \textbf{5 labs}. 1st Prize IdeasUPV (2024).}
+\item {\textbf{Model.} Own ConvNeXt detector (YOLO/DQ-DETR-inspired), from scratch; ~10–2000 colonies/image. \textbf{67 mAP50-95}; 92\% recall / 93\% precision.}
+\item {\textbf{Training.} \textbf{12,500+} GPU-hours on Leonardo (two EuroHPC AI Factory allocations). \textbf{4x A100}, DDP/AMP/torch.compile/SLURM, checkpoint-resumed jobs. Own framework: k-fold CV, WBF ensembles.}
+\item {\textbf{Data.} \textbf{1,500}/\textbf{5,000} images annotated with microbiologists. Weakly-supervised labelling (click $\rightarrow$ crop $\rightarrow$ 4-ch CNN heatmap $\rightarrow$ bbox); versioning + k-fold label scoring.}
+\item {\textbf{Product/infra.} BullMQ/Redis inference on GCP, plus NestJS/PostgreSQL, Next.js and React Native.}
+\end{cvitems}
+    }
+\cvkeep
+\cventry
+    {Research Engineer (full-time)}
+    {MIALAB: Medical Imaging Analysis Laboratory, UPV}
+    {Valencia, Spain}
+    {May 2025 – Jan 2026}
+    {
+\begin{cvitems}
+\item {Volumetric brain MRI segmentation with nnU-Net; multi-scale feature strategies. Profiled volBrain (\textbf{700k+} volumes) from NIfTI ingest to voxel prediction for inference cost.}
+\end{cvitems}
+    }
+\end{cventries}
+\vspace{0.4mm}
+\noindent{\fontsize{8pt}{1em}\bodyfont\bfseries\color{darktext} Earlier experience:}~~{\fontsize{8pt}{1em}\bodyfont\color{black} Tapstar, Full-Stack Engineer (freelance), 2025; Vesta-Z, Data Engineer, 2023–2025; Neurocatching, Data Scientist Intern, 2023; Sciling, Backend Developer Intern, 2022.}\par
+
+\cvsection{Technical Skills}
+\begin{cvskills}
+  \cvskill
+    {AI \& ML}
+    {Object detection, instance segmentation, density estimation, classification, CNNs, ViTs, foundation models, Neural ODEs, PINNs}
+  \cvskill
+    {Medical imaging}
+    {nnU-Net, volumetric MRI, NIfTI}
+  \cvskill
+    {Training}
+    {Python, PyTorch (DDP, AMP, torch.compile), Hugging Face, timm, multi-GPU HPC (SLURM)}
+  \cvskill
+    {Production}
+    {ONNX, Docker, CI/CD}
+\end{cvskills}
+
+\cvsection{Languages}
+\begin{cvparagraph}
+Spanish (native), Catalan (native), English (C1)
+\end{cvparagraph}
+
+%-------------------------------------------------------------------------------
+\end{document}
